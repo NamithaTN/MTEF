@@ -1,81 +1,29 @@
-MTEFO: Multimodal Transformer Embedding Fusion and Oversampling for Early Prediction of IVIG Resistance in Kawasaki Disease
-Overview
+MTEFO: Multimodal Transformer Embedding Fusion and Oversampling
 
-This repository contains the implementation of MTEFO, a hybrid machine learning framework designed to predict intravenous immunoglobulin (IVIG) resistance in Kawasaki Disease (KD) using structured clinical data.
+This repository contains code snippets related to the implementation of MTEFO (Multimodal Transformer Embedding Fusion and Oversampling), a framework designed for early prediction of IVIG resistance in KD patients, task on an imbalanced clinical dataset.
 
-The proposed approach integrates semantic embeddings from pretrained transformers with tabular transformer representations, followed by embedding-level oversampling and classical machine learning classification.
+🔍 Overview
 
-The method is designed to address:
+MTEFO integrates:
 
-Small clinical datasets
+Sentence Transformer embeddings (semantic representation of structured data)
+FT-Transformer embeddings (tabular feature learning)
+Embedding fusion (concatenation of multimodal representations)
+Oversampling techniques (such as SMOTE/ADASYN applied in embedding space)
+Machine Learning classifiers (e.g., Random Forest, LightGBM, AutoML approaches)
 
-Class imbalance
+The framework is particularly tailored for imbalanced datasets, with a focus on improving sensitivity (recall) for critical predictions.
 
-Feature interaction learning
+⚠️ Note
 
-Key Contributions
+This repository provides selected code snippets intended to illustrate key components of the methodology.
 
-Transform structured clinical features into semantic sentences and extract embeddings using Sentence Transformers.
 
-Generate tabular feature embeddings using FT-Transformer (AutoGluon).
+📩 Access to Full Implementation
 
-Fuse both embedding spaces to capture complementary representations.
+The detailed implementation can be shared upon reasonable request for academic and research purposes.
 
-Apply SMOTE/ADASYN oversampling in the fused embedding space.
-
-Train classical ML models for IVIG resistance prediction.
-
-Framework Overview
-
-Pipeline of the proposed MTEFO model:
-
-Clinical data preprocessing
-
-Sentence transformation of structured features
-
-Sentence Transformer embedding extraction
-
-FT-Transformer tabular embedding extraction
-
-Embedding fusion
-
-Oversampling in embedding space
-
-Classical ML classification
-
-Methodology
-1. Sentence Transformer Embeddings
-
-Structured patient data is converted into sentence format and encoded using:
-
-paraphrase-MiniLM-L6-v2
-
-This captures semantic relationships between clinical variables.
-
-2. FT-Transformer Embeddings
-
-Tabular embeddings are generated using AutoGluon's FT-Transformer, which learns feature interactions in structured datasets.
-
-3. Embedding Fusion
-
-The embeddings from both transformers are concatenated to form a fused feature representation.
-
-4. Oversampling
-
-To handle class imbalance, oversampling methods such as:
-
-SMOTE
-
-ADASYN
-
-are applied in the fused embedding space.
-
-5. Classification
-
-The fused embeddings are used to train classical machine learning models such as:
-
-Random Forest
-
-LightGBM
-
-Gradient Boosting
+🎯 Purpose of This Repository
+To demonstrate core ideas behind MTEFO
+To support understanding of embedding fusion and oversampling strategies
+To provide reference snippets for research and educational use
