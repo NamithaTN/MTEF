@@ -10,7 +10,7 @@ Sentence Transformer embeddings (semantic representation of structured data)
 FT-Transformer embeddings (tabular feature learning)
 Embedding fusion (concatenation of multimodal representations)
 Oversampling techniques (such as SMOTE/ADASYN applied in embedding space)
-Machine Learning classifiers (e.g., Random Forest, LightGBM, AutoML approaches)
+Machine Learning classifiers (e.g., Random Forest, LightGBM)
 
 The framework is particularly tailored for imbalanced datasets, with a focus on improving sensitivity (recall) for critical predictions.
 
